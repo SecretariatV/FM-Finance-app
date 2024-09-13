@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className={S.root_logo}>
         <img src={app.openNavbar ? logo : miniLogo} alt="logo image" />
       </div>
-      <ul className={S.root_nav}>
+      <ul className={S.nav}>
         {NAV_DATA.map((item) => (
           <SidebarItem data={item} key={item.title} />
         ))}

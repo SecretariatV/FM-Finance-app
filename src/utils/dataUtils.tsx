@@ -1,8 +1,12 @@
 import { lazy } from "react";
 import { INavType, IRouterType } from "./typeUtils";
+import HomePage from "@pages/home";
+import TransactionPage from "@pages/transaction";
+import BudgetPage from "@pages/budget";
+import PotPage from "@pages/pot";
+import BillPage from "@pages/bill";
 
 const LazyMainLayout = lazy(() => import("@features/layout/mainLayout"));
-const LazyHomePage = lazy(() => import("@pages/home"));
 
 const ROUTER_DATA: IRouterType[] = [
   {
@@ -13,7 +17,27 @@ const ROUTER_DATA: IRouterType[] = [
       {
         title: "Home",
         path: "",
-        element: <LazyHomePage />,
+        element: <HomePage />,
+      },
+      {
+        title: "Transactions",
+        path: "transaction",
+        element: <TransactionPage />,
+      },
+      {
+        title: "Budget",
+        path: "budget",
+        element: <BudgetPage />,
+      },
+      {
+        title: "Pot",
+        path: "pot",
+        element: <PotPage />,
+      },
+      {
+        title: "Bill",
+        path: "bill",
+        element: <BillPage />,
       },
     ],
   },
