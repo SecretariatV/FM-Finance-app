@@ -1,0 +1,78 @@
+@use "@styles/variables" as *;
+@use "@styles/mixin" as *;
+
+.root {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 32px 16px;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $beige-100;
+    z-index: 1;
+    border-radius: 0 12px 12px 0;
+    border-left: 4px solid $green;
+    transform: translateX(-100%);
+  }
+
+  &.minimize {
+    grid-template-columns: auto;
+    padding: 16px 8px 16px 32px;
+
+    h3 {
+      display: none;
+    }
+  }
+
+  &.active {
+    h3 {
+      color: $grey-900;
+    }
+
+    svg {
+      fill: $green;
+    }
+
+    &::after {
+      animation: activeAnim 0.5s ease-in-out forwards;
+    }
+  }
+
+  &:hover {
+    h3 {
+      color: $grey-100;
+    }
+
+    svg {
+      fill: $grey-100;
+    }
+  }
+
+  h3 {
+    color: $grey-300;
+    text-wrap: nowrap;
+    z-index: 2;
+    @include nomalAnim;
+  }
+
+  svg {
+    fill: $grey-300;
+    z-index: 2;
+    @include nomalAnim;
+  }
+}
+
+@keyframes activeAnim {
+  100% {
+    transform: translateX(0);
+  }
+}

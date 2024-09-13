@@ -1,16 +1,26 @@
 @use "@styles/variables" as *;
+@use "@styles/mixin" as *;
 
 .root {
-  width: 100%;
+  width: 300px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 24px;
   background-color: $grey-900;
   border-radius: 0 16px 16px 0;
   padding-bottom: 58px;
+  @include nomalAnim;
 
   &_logo {
     width: 100%;
     padding: 40px 32px;
   }
+
+  &_nav {
+    padding-right: 24px;
+  }
+}
+
+.minimize {
+  width: 88px;
 }

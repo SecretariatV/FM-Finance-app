@@ -1,5 +1,42 @@
+@use "@styles/variables" as *;
+@use "@styles/mixin" as *;
+
 .root {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 16px 32px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 32px;
+
+  &.minimize {
+    svg {
+      transform: rotate(180deg);
+    }
+
+    h3 {
+      display: none;
+    }
+  }
+
+  &:hover {
+    h3 {
+      color: $grey-100;
+    }
+
+    svg {
+      fill: $grey-100;
+    }
+  }
+
+  h3 {
+    color: white;
+    text-align: left;
+    color: $grey-300;
+    @include nomalAnim;
+  }
+
+  svg {
+    fill: $grey-300;
+    @include nomalAnim;
+  }
 }

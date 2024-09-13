@@ -1,3 +1,4 @@
+import { Arrowfatlinesleft } from "./Arrowfatlinesleft";
 import { Arrowsdownup } from "./Arrowsdownup";
 import { Barbell } from "./Barbell";
 import { Bookopentext } from "./Bookopentext";
@@ -13,7 +14,6 @@ import { House } from "./House";
 import { Jarfill } from "./Jarfill";
 import { Listbullets } from "./Listbullets";
 import { Magnifyingglass } from "./Magnifyingglass";
-import { Minimize } from "./Minimize";
 import { Musicnote } from "./Musicnote";
 import { Network } from "./Network";
 import { Receipt } from "./Receipt";
@@ -25,6 +25,7 @@ import { Warningcircle } from "./Warningcircle";
 import { Wrench } from "./Wrench";
 
 export const Icons = {
+  Arrowfatlinesleft,
   Arrowsdownup,
   Barbell,
   Bookopentext,
@@ -40,7 +41,6 @@ export const Icons = {
   Jarfill,
   Listbullets,
   Magnifyingglass,
-  Minimize,
   Musicnote,
   Network,
   Receipt,

@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { IRouterType } from "./typeUtils";
+import { INavType, IRouterType } from "./typeUtils";
 
 const LazyMainLayout = lazy(() => import("@features/layout/mainLayout"));
 const LazyHomePage = lazy(() => import("@pages/home"));
@@ -19,4 +19,32 @@ const ROUTER_DATA: IRouterType[] = [
   },
 ];
 
-export { ROUTER_DATA };
+const NAV_DATA: INavType[] = [
+  {
+    title: "Overview",
+    icon: "House",
+    path: "",
+  },
+  {
+    title: "Transactions",
+    icon: "Arrowsdownup",
+    path: "transaction",
+  },
+  {
+    title: "Budgets",
+    icon: "Chartdonut",
+    path: "budget",
+  },
+  {
+    title: "Pots",
+    icon: "Jarfill",
+    path: "pot",
+  },
+  {
+    title: "Recurring bills",
+    icon: "Receipt",
+    path: "bill",
+  },
+];
+
+export { ROUTER_DATA, NAV_DATA };
