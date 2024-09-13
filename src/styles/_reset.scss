@@ -6,37 +6,12 @@
   border: 0;
 }
 
+::after,
+::before {
+  box-sizing: border-box;
+}
+
 button {
   background-color: transparent;
   cursor: pointer;
-}
-
-h1 {
-  font-size: 32px;
-  line-height: 120%;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 20px;
-  line-height: 120%;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 16px;
-  line-height: 150%;
-  font-weight: 700;
-}
-
-h4 {
-  font-size: 14px;
-  line-height: 150%;
-  font-weight: 400;
-}
-
-h5 {
-  font-size: 12px;
-  line-height: 150%;
-  font-weight: 400;
 }

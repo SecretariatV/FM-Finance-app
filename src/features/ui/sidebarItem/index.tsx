@@ -36,7 +36,7 @@ export const SidebarItem: FC<IProps> = ({ data }) => {
       onClick={changeLink}
     >
       <Icon name={data.icon} width="24" height="24" />
-      <h3>{data.title}</h3>
+      <p>{data.title}</p>
     </li>
   );
 };

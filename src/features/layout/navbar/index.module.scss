@@ -2,22 +2,41 @@
 @use "@styles/mixin" as *;
 
 .root {
-  width: 300px;
+  grid-area: nav;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 24px;
+  padding: 8px 16px 0;
+  border-radius: 8px 8px 0 0;
   background-color: $grey-900;
-  border-radius: 0 16px 16px 0;
-  padding-bottom: 58px;
   @include nomalAnim;
 
   &_logo {
+    display: none;
     width: 100%;
     padding: 40px 32px;
   }
 
   &_nav {
-    padding-right: 24px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @include breakpoint("md") {
+    width: 300px;
+    grid-template-rows: auto 1fr auto;
+    gap: 24px;
+    border-radius: 0 16px 16px 0;
+    padding: 0;
+    padding-bottom: 58px;
+
+    &_logo {
+      display: block;
+    }
+
+    &_nav {
+      grid-template-columns: 1fr;
+      padding: 0;
+      padding-right: 24px;
+    }
   }
 }
 

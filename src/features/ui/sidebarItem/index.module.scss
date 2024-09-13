@@ -4,13 +4,23 @@
 .root {
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 32px 16px;
-  border-radius: 0 12px 12px 0;
+  justify-content: center;
+  padding-top: 8px;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  height: 44px;
+
+  p {
+    display: none;
+    z-index: 2;
+  }
+
+  svg {
+    fill: $grey-300;
+    z-index: 2;
+    justify-self: center;
+  }
 
   &::after {
     content: "";
@@ -19,55 +29,55 @@
     position: absolute;
     background-color: $beige-100;
     z-index: 1;
-    border-radius: 0 12px 12px 0;
-    border-left: 4px solid $green;
-    transform: translateX(-100%);
-  }
-
-  &.minimize {
-    grid-template-columns: auto;
-    padding: 16px 8px 16px 32px;
-
-    h3 {
-      display: none;
-    }
+    border-radius: 8px 8px 0 0;
+    border-bottom: 4px solid $green;
+    transform: translateY(-100%);
+    @include nomalAnim;
   }
 
   &.active {
-    h3 {
-      color: $grey-900;
+    &::after {
+      transform: translateY(0);
     }
 
     svg {
       fill: $green;
     }
+  }
+
+  @include breakpoint("xm") {
+    height: 66px;
+    grid-template-rows: auto 1fr;
+    gap: 4px;
+
+    p {
+      display: block;
+      @include text5;
+      @include bold;
+      color: $grey-300;
+    }
+
+    &.active {
+      p {
+        color: $grey-900;
+      }
+    }
+  }
+
+  @include breakpoint("md") {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 16px;
+    padding: 16px 32px;
+    border-radius: 0 12px 12px 0;
+    height: 56px;
 
     &::after {
-      animation: activeAnim 0.5s ease-in-out forwards;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid $green;
+      border-bottom: 0px;
+      transform: translateX(-100%);
     }
-  }
-
-  &:hover {
-    h3 {
-      color: $grey-100;
-    }
-
-    svg {
-      fill: $grey-100;
-    }
-  }
-
-  h3 {
-    color: $grey-300;
-    text-wrap: nowrap;
-    z-index: 2;
-    @include nomalAnim;
-  }
-
-  svg {
-    fill: $grey-300;
-    z-index: 2;
-    @include nomalAnim;
   }
 }
 
