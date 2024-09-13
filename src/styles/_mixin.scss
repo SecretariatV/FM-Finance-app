@@ -1,5 +1,5 @@
 $breakpoints: (
-  "xm": 360px,
+  "xm": 375px,
   "sm": 640px,
   "md": 768px,
   "lg": 1024px,
@@ -26,4 +26,33 @@ $breakpoints: (
 
 @mixin nomalAnim {
   transition: all ease-in-out 0.2s;
+}
+
+@mixin text1 {
+  font-size: 32px;
+  line-height: 120%;
+}
+
+@mixin text2 {
+  font-size: 20px;
+  line-height: 120%;
+}
+
+@mixin text3 {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin text4 {
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@mixin text5 {
+  font-size: 12px;
+  line-height: 150%;
+}
+
+@mixin bold {
+  font-weight: 700;
 }

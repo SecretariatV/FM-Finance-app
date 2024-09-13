@@ -2,10 +2,18 @@
 
 .root {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-areas: "aside" "nav";
+  grid-template-rows: 1fr auto;
   @include fullScreen;
 
+  @include breakpoint("md") {
+    grid-template-areas: "nav aside";
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 1fr;
+  }
+
   &_wrapper {
+    grid-area: aside;
     display: grid;
     grid-template-rows: auto 1fr;
   }
