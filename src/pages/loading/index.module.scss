@@ -1,2 +1,20 @@
+@use "@styles/reset" as *;
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
 .root {
+  background-color: $beige-100;
+  @include fullScreen;
+  @include centerItem;
+
+  &.anim {
+    animation: flashAnim 1s linear forwards;
+    position: absolute;
+  }
+}
+
+@keyframes flashAnim {
+  100% {
+    transform: translateY(-100vh);
+  }
 }
