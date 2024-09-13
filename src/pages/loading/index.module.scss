@@ -4,12 +4,17 @@
 
 .root {
   background-color: $beige-100;
+  z-index: 50;
   @include fullScreen;
   @include centerItem;
 
   &.anim {
     animation: flashAnim 1s linear forwards;
     position: absolute;
+  }
+
+  p {
+    display: none;
   }
 }
 

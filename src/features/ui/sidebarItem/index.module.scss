@@ -14,12 +14,14 @@
   p {
     display: none;
     z-index: 2;
+    @include nomalAnim;
   }
 
   svg {
     fill: $grey-300;
     z-index: 2;
     justify-self: center;
+    @include nomalAnim;
   }
 
   &::after {
@@ -31,7 +33,7 @@
     z-index: 1;
     border-radius: 8px 8px 0 0;
     border-bottom: 4px solid $green;
-    transform: translateY(-100%);
+    transform: translateY(100%);
     @include nomalAnim;
   }
 
@@ -45,6 +47,12 @@
     }
   }
 
+  &:hover {
+    svg {
+      fill: $grey-100;
+    }
+  }
+
   @include breakpoint("xm") {
     height: 66px;
     grid-template-rows: auto 1fr;
@@ -52,14 +60,35 @@
 
     p {
       display: block;
+      color: $grey-300;
+      text-wrap: nowrap;
       @include text5;
       @include bold;
-      color: $grey-300;
     }
 
     &.active {
       p {
         color: $grey-900;
+      }
+
+      &:hover {
+        p {
+          color: $secondary-green;
+        }
+
+        svg {
+          fill: $secondary-green;
+        }
+      }
+    }
+
+    &:hover {
+      p {
+        color: $grey-100;
+      }
+
+      svg {
+        fill: $grey-100;
       }
     }
   }
@@ -72,11 +101,24 @@
     border-radius: 0 12px 12px 0;
     height: 56px;
 
+    p {
+      @include text3;
+      @include bold;
+    }
+
     &::after {
       border-radius: 0 12px 12px 0;
       border-left: 4px solid $green;
       border-bottom: 0px;
       transform: translateX(-100%);
+    }
+
+    &.minimize {
+      gap: 0;
+      padding: 16px 24px 16px 32px;
+      p {
+        display: none;
+      }
     }
   }
 }

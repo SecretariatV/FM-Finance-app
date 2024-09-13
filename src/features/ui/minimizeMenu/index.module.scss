@@ -2,14 +2,19 @@
 @use "@styles/mixin" as *;
 
 .root {
-  display: grid;
   grid-template-columns: auto 1fr;
   gap: 16px;
   align-items: center;
   padding: 16px 32px;
   display: none;
 
+  @include breakpoint("md") {
+    display: grid;
+  }
+
   &.minimize {
+    gap: 0;
+
     svg {
       transform: rotate(180deg);
     }

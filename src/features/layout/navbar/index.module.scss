@@ -15,7 +15,7 @@
     padding: 40px 32px;
   }
 
-  &_nav {
+  .nav {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
@@ -32,10 +32,17 @@
       display: block;
     }
 
-    &_nav {
+    .nav {
       grid-template-columns: 1fr;
+      grid-template-rows: repeat(auto-fill, minmax(56px, 1fr));
       padding: 0;
       padding-right: 24px;
+    }
+
+    &.minimize {
+      .nav {
+        padding-right: 8px;
+      }
     }
   }
 }

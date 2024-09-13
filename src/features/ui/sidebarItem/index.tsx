@@ -19,6 +19,8 @@ export const SidebarItem: FC<IProps> = ({ data }) => {
   useEffect(() => {
     if (location.pathname.split("/")[1] === data.path) {
       setActive(true);
+    } else {
+      setActive(false);
     }
   }, [location]);
 

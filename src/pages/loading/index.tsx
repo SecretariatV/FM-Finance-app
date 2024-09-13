@@ -9,7 +9,7 @@ interface IProps {
 const LoadingPage: FC<IProps> = ({ effect }) => {
   return (
     <div className={clsx(S.root, effect && S.anim)} role="alert">
-      <p className="hidden">Loading, please wait...</p>
+      <p>Loading, please wait...</p>
       <h1>Personal Finance App</h1>
     </div>
   );
