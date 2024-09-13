@@ -17,7 +17,7 @@ const renderRoutes = (routes: IRouterType[]) => {
 const PageRouter = () => {
   const PAGE_ROUTER = renderRoutes(ROUTER_DATA);
   return (
-    <Suspense fallback={<LoadingPage />}>
+    <Suspense fallback={<LoadingPage effect={false} />}>
       <Routes>{PAGE_ROUTER}</Routes>
     </Suspense>
   );

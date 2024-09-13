@@ -1,3 +1,5 @@
+import { IconNames } from "@assets/icon/icons";
+
 interface IRouterType {
   title: string;
   path: string;
@@ -5,4 +7,14 @@ interface IRouterType {
   children?: IRouterType[];
 }
 
-export type { IRouterType };
+interface INavType {
+  title: string;
+  icon: IconNames;
+  path: string;
+}
+
+interface IAppProps {
+  openNavbar: boolean;
+}
+
+export type { IRouterType, INavType, IAppProps };
