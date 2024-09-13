@@ -7,10 +7,10 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <>
-      <LoadingPage />
+      <LoadingPage effect />
       <div className={S.root}>
         <Navbar />
-        <div className={S.wrapper}>
+        <div className={S.root_wrapper}>
           <Header />
           <Outlet />
         </div>

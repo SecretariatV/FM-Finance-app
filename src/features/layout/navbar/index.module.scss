@@ -1,2 +1,16 @@
+@use "@styles/variables" as *;
+
 .root {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 24px;
+  background-color: $grey-900;
+  border-radius: 0 16px 16px 0;
+  padding-bottom: 58px;
+
+  &_logo {
+    width: 100%;
+    padding: 40px 32px;
+  }
 }

@@ -1,2 +1,12 @@
+@use "@styles/mixin" as *;
+
 .root {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  @include fullScreen;
+
+  &_wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
 }
