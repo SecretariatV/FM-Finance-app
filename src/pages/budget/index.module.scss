@@ -1,2 +1,62 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
 .root {
+  display: flex;
+  flex-direction: column;
+  gap: $space-400;
+  @include mainPadding;
+
+  &_header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  &_addbutton {
+    border-radius: $space-100;
+    padding: $space-200;
+    @include text4;
+    @include bold;
+  }
+
+  &_title {
+    color: $grey-900;
+    @include text1;
+    @include bold;
+  }
+}
+
+.wrapper {
+  display: grid;
+}
+
+.card {
+  border-radius: $space-150;
+  padding: $space-300 $space-250;
+  background-color: white;
+}
+
+.summary {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: $space-300;
+
+  &_chart {
+    display: grid;
+    place-items: center;
+    width: 303px;
+    height: 280px;
+  }
+
+  &_infos {
+    display: flex;
+    flex-direction: column;
+    gap: $space-300;
+  }
+
+  &_title {
+    color: $grey-900;
+    @include text2;
+    @include bold;
+  }
 }

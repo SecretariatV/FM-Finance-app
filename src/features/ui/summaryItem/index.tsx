@@ -1,11 +1,11 @@
-import { ISummaryType } from "@utils/typeUtils";
+import { INormalInfoType } from "@utils/typeUtils";
 import S from "./index.module.scss";
 import { FC } from "react";
 import { formatValue } from "@utils/formatUtils";
 import clsx from "clsx";
 
 interface IProps {
-  data: ISummaryType;
+  data: INormalInfoType;
   active: boolean;
 }
 
