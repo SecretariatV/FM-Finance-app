@@ -5,11 +5,16 @@ import { useApp } from "@contexts/appContext";
 
 const TransactionPage = () => {
   const categoryRef = useRef<HTMLDivElement>(null);
+  const sortRef = useRef<HTMLDivElement>(null);
   const screenRef = useRef<HTMLDivElement>(null);
-  const { app, setApp } = useApp();
+  const { setApp } = useApp();
 
-  const closeFilter = () => {
+  const closeCategories = () => {
     setApp((prevState) => ({ ...prevState, categoryOpen: false }));
+  };
+
+  const closeSots = () => {
+    setApp((prevState) => ({ ...prevState, sortOpen: false }));
   };
 
   useEffect(() => {
@@ -18,12 +23,15 @@ const TransactionPage = () => {
         categoryRef.current &&
         !categoryRef.current.contains(event.target as Node)
       ) {
-        closeFilter();
+        closeCategories();
+      }
+
+      if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
+        closeSots();
       }
     };
 
     if (screenRef.current) {
-      console.log("this filter");
       screenRef.current.addEventListener("mousedown", handleClickOutside);
     }
 
@@ -40,7 +48,7 @@ const TransactionPage = () => {
       <div className={S.wrapper}>
         <div className={S.wrapper_header}>
           <SearchBar />
-          <SortFilter />
+          <SortFilter ref={sortRef} />
           <CategoryFilter ref={categoryRef} />
         </div>
       </div>

@@ -28,7 +28,7 @@
   }
 
   &:hover {
-    svg {
+    .miniIcon {
       fill: $green;
     }
   }
@@ -129,5 +129,17 @@
     &:hover {
       color: $green;
     }
+  }
+
+  @include breakpoint("md") {
+    &_title {
+      display: none;
+    }
+  }
+}
+
+.first {
+  @include breakpoint("md") {
+    display: none;
   }
 }

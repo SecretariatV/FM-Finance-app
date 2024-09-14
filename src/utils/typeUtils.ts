@@ -69,6 +69,8 @@ interface IAppProps {
   searchInfo: string | undefined;
   categoryFilter: string;
   categoryOpen: boolean;
+  sortFilter: string;
+  sortOpen: boolean;
 }
 
 export type {

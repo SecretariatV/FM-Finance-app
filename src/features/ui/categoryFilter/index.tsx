@@ -47,7 +47,7 @@ export const CategoryFilter = forwardRef<HTMLDivElement>((_, ref) => {
       </button>
       <div className={clsx(S.list, app.categoryOpen && S.open)}>
         <p className={S.list_title}>Category</p>
-        <div className={S.list_border} />
+        <div className={clsx(S.list_border, S.first)} />
         {categories.map((data, index) => (
           <Fragment key={index}>
             <button

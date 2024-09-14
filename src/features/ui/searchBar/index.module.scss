@@ -28,4 +28,8 @@
     fill: $grey-900;
     @include normalAnim;
   }
+
+  @include breakpoint("md") {
+    width: 320px;
+  }
 }

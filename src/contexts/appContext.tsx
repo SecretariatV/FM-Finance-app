@@ -21,6 +21,8 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
     searchInfo: undefined,
     categoryFilter: "all",
     categoryOpen: false,
+    sortFilter: "latest",
+    sortOpen: false,
   });
 
   return (
