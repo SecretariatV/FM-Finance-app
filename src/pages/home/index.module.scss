@@ -1,2 +1,127 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
 .root {
+  display: flex;
+  flex-direction: column;
+  gap: $space-400;
+  @include mainPadding;
+
+  p {
+    color: $grey-900;
+    @include text1;
+    @include bold;
+  }
+
+  &_values {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: $space-150;
+
+    @include breakpoint("md") {
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-300;
+    }
+  }
+
+  &_content {
+    display: grid;
+    gap: $space-300;
+
+    &_list {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: $space-200;
+    }
+
+    @include breakpoint("lg") {
+      grid-template-columns: 7fr 5fr;
+    }
+  }
+}
+
+.potCard {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+
+  &_total {
+    border-radius: $space-150;
+    background-color: $beige-100;
+    display: grid;
+    grid-template-areas: "img title" "img value";
+    grid-column-gap: $space-200;
+    grid-template-columns: auto 1fr;
+    padding: $space-200;
+    align-items: center;
+    height: 110px;
+
+    img {
+      grid-area: img;
+    }
+
+    p {
+      grid-area: title;
+      @include text4;
+    }
+
+    span {
+      grid-area: value;
+      @include text1;
+      @include bold;
+    }
+  }
+
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @include breakpoint("md") {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr auto;
+  }
+
+  @include breakpoint("lg") {
+    grid-template-columns: auto 1fr;
+
+    &_total {
+      width: 247px;
+    }
+  }
+}
+
+.budgetCard {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: $space-200;
+  padding: $space-100 0;
+
+  &_chart {
+    justify-self: center;
+  }
+
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-200;
+  }
+
+  @include breakpoint("md") {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr auto;
+    padding: $space-400 0;
+
+    &_list {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.billCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }

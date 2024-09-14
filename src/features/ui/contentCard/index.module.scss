@@ -1,0 +1,43 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
+.root {
+  border-radius: 12px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 20px 24px;
+
+  &.list {
+    gap: 32px;
+  }
+
+  &.block {
+    gap: 20px;
+  }
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      color: $grey-500;
+      text-decoration: none;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+      @include text4;
+
+      svg {
+        fill: $grey-500;
+      }
+    }
+  }
+
+  @include breakpoint("lg") {
+    padding: 32px;
+  }
+}

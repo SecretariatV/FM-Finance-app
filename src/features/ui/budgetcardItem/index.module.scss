@@ -1,0 +1,53 @@
+@use "@styles/variables" as *;
+@use "@styles/mixin" as *;
+
+.root {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 4px;
+  padding-left: 20px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    border-radius: 4px;
+    top: 0;
+    left: 0;
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      @if $i == 1 {
+        &::after {
+          background-color: $green;
+        }
+      } @else if $i == 2 {
+        &::after {
+          background-color: $cyan;
+        }
+      } @else if $i == 3 {
+        &::after {
+          background-color: $yellow;
+        }
+      } @else {
+        &::after {
+          background-color: $navy;
+        }
+      }
+    }
+  }
+
+  p {
+    color: $grey-500;
+    @include text5;
+  }
+
+  span {
+    color: $grey-900;
+    @include text4;
+    @include bold;
+  }
+}

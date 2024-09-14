@@ -13,8 +13,34 @@ interface INavType {
   path: string;
 }
 
+interface ISummaryType {
+  title: string;
+  value: number;
+}
+
+interface IContentType {
+  title: string;
+  hyperLink: string;
+  hyperLinkText: string;
+  type: "list" | "block";
+}
+
+interface ITransactionType {
+  avatar: string;
+  name: string;
+  date: string;
+  amount: number;
+}
+
 interface IAppProps {
   openNavbar: boolean;
 }
 
-export type { IRouterType, INavType, IAppProps };
+export type {
+  IRouterType,
+  INavType,
+  IAppProps,
+  ISummaryType,
+  IContentType,
+  ITransactionType,
+};

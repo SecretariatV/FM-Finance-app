@@ -8,7 +8,7 @@
   padding: 16px 32px;
   display: none;
 
-  @include breakpoint("md") {
+  @include breakpoint("lg") {
     display: grid;
   }
 
