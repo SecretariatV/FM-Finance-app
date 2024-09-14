@@ -19,12 +19,127 @@
   border-radius: $space-150;
   padding: $space-300 $space-250;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: $space-300;
 
   &_header {
     display: grid;
     grid-template-columns: 1fr auto auto;
     align-items: center;
     gap: $space-300;
+  }
+}
+
+.transactionTable {
+  display: flex;
+  flex-direction: column;
+  gap: $space-300;
+
+  thead {
+    display: none;
+  }
+
+  &_avatar {
+    grid-area: avatar;
+    img {
+      width: 32px;
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+    }
+  }
+
+  &_name {
+    grid-area: name;
+    color: $grey-900;
+    @include text4;
+    @include bold;
+  }
+
+  &_category {
+    grid-area: category;
+    color: $grey-500;
+    @include text5;
+    @include regular;
+  }
+
+  &_amount {
+    grid-area: amount;
+    color: $grey-900;
+    justify-self: end;
+    @include text4;
+    @include bold;
+
+    &.green {
+      color: $green;
+    }
+  }
+
+  &_date {
+    grid-area: date;
+    color: $grey-500;
+    @include text5;
+    @include regular;
+  }
+
+  tr {
+    display: grid;
+  }
+
+  tbody {
+    tr {
+      grid-template-areas: "avatar name amount" "avatar category date";
+      align-items: center;
+      grid-template-columns: auto 1fr auto;
+      grid-column-gap: $space-150;
+      grid-row-gap: $space-50;
+    }
+  }
+
+  @include breakpoint("md") {
+    thead {
+      display: block;
+
+      tr {
+        grid-template-columns: auto 100px minmax(100px, 150px) minmax(
+            70px,
+            150px
+          );
+        gap: $space-150;
+
+        th {
+          text-align: left;
+          color: $grey-500;
+          @include text5;
+          @include regular;
+
+          &:last-child {
+            text-align: end;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        grid-template-areas: "avatar name category date amount";
+        align-items: center;
+        grid-template-columns: auto 1fr 100px minmax(100px, 150px) minmax(
+            70px,
+            150px
+          );
+        grid-column-gap: $space-150;
+      }
+    }
+  }
+}
+
+.border {
+  width: 100%;
+  height: 1px;
+  background-color: $grey-100;
+  margin: $space-200 0;
+
+  &:last-child {
+    display: none;
   }
 }

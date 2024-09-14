@@ -29,7 +29,7 @@
     @include normalAnim;
   }
 
-  @include breakpoint("md") {
+  @include breakpoint("lg") {
     width: 320px;
   }
 }

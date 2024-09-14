@@ -1,4 +1,4 @@
-import { ISummaryType, ITransactionType } from "@utils/typeUtils";
+import { ISummaryType, IViewTransactionType } from "@utils/typeUtils";
 import S from "./index.module.scss";
 import {
   BudgetcardItem,
@@ -30,7 +30,7 @@ const tempBudgetData: ISummaryType[] = [
   { title: "Personal Care", value: 100 },
 ];
 
-const tempTransactionData: ITransactionType[] = [
+const tempTransactionData: IViewTransactionType[] = [
   {
     avatar: "emma-richardson.jpg",
     name: "Emma Richardson",
