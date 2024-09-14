@@ -13,10 +13,13 @@ interface INavType {
   path: string;
 }
 
-interface ISummaryType {
+interface ISummerType {
   title: string;
   value: number;
+  total: number;
 }
+
+type INormalInfoType = Omit<ISummerType, "totla">;
 
 interface IContentType {
   title: string;
@@ -80,10 +83,11 @@ export type {
   IRouterType,
   INavType,
   IAppProps,
-  ISummaryType,
+  INormalInfoType,
   IContentType,
   ITransactionType,
   ICategoryType,
   ISortType,
   IViewTransactionType,
+  ISummerType,
 };

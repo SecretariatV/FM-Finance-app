@@ -1,4 +1,4 @@
-import { ISummaryType, IViewTransactionType } from "@utils/typeUtils";
+import { INormalInfoType, IViewTransactionType } from "@utils/typeUtils";
 import S from "./index.module.scss";
 import {
   BudgetcardItem,
@@ -10,20 +10,20 @@ import {
 import memoryImg from "@assets/memory.svg";
 import { BillItem } from "@features/ui/billItem";
 
-const tempData: ISummaryType[] = [
+const tempData: INormalInfoType[] = [
   { title: "Current Balance", value: 4836.0 },
   { title: "Income", value: 3814.25 },
   { title: "Expenses", value: 1700.5 },
 ];
 
-const tempPotData: ISummaryType[] = [
+const tempPotData: INormalInfoType[] = [
   { title: "Savings", value: 159 },
   { title: "Gift", value: 40 },
   { title: "Concert Ticket", value: 110 },
   { title: "New Laptop", value: 10 },
 ];
 
-const tempBudgetData: ISummaryType[] = [
+const tempBudgetData: INormalInfoType[] = [
   { title: "Entertainment", value: 50 },
   { title: "Bills", value: 750 },
   { title: "Dining Out", value: 75 },
@@ -63,7 +63,7 @@ const tempTransactionData: IViewTransactionType[] = [
   },
 ];
 
-const tempBillData: ISummaryType[] = [
+const tempBillData: INormalInfoType[] = [
   { title: "Paid Bills", value: 190 },
   { title: "Total Upcoming", value: 194.98 },
   { title: "Due Soon", value: 59.98 },

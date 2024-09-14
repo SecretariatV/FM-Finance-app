@@ -1,9 +1,9 @@
-import { ISummaryType } from "@utils/typeUtils";
+import { INormalInfoType } from "@utils/typeUtils";
 import S from "./index.module.scss";
 import { FC } from "react";
 
 interface IProps {
-  data: ISummaryType;
+  data: INormalInfoType;
 }
 
 export const BillItem: FC<IProps> = ({ data }) => {

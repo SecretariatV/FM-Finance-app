@@ -1,0 +1,46 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
+.root {
+  background-color: white;
+  border-radius: $space-150;
+  padding: $space-300 $space-250;
+  display: flex;
+  flex-direction: column;
+  gap: $space-250;
+
+  &_header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: $space-200;
+    align-items: center;
+  }
+
+  &_title {
+    color: $grey-900;
+    @include text2;
+    @include bold;
+  }
+
+  .alam {
+    width: $space-200;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      .alam {
+        @if $i == 1 {
+          background-color: $green;
+        } @else if $i == 2 {
+          background-color: $cyan;
+        } @else if $i == 3 {
+          background-color: $yellow;
+        } @else {
+          background-color: $navy;
+        }
+      }
+    }
+  }
+}
