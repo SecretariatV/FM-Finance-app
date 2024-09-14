@@ -53,7 +53,7 @@
     }
   }
 
-  @include breakpoint("xm") {
+  @include breakpoint("md") {
     height: 66px;
     grid-template-rows: auto 1fr;
     gap: 4px;
@@ -93,7 +93,7 @@
     }
   }
 
-  @include breakpoint("md") {
+  @include breakpoint("lg") {
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr;
     gap: 16px;

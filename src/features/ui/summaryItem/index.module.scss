@@ -1,0 +1,34 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
+.root {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: white;
+
+  p {
+    color: $grey-500;
+    @include text4;
+  }
+
+  span {
+    color: $grey-900;
+    @include bold;
+    @include text1;
+  }
+
+  &.active {
+    background-color: $grey-900;
+
+    p {
+      color: white;
+    }
+
+    span {
+      color: white;
+    }
+  }
+}
