@@ -1,0 +1,22 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
+.root {
+  p {
+    color: $grey-500;
+    display: none;
+    @include text4;
+    @include regular;
+  }
+
+  svg {
+    fill: $grey-900;
+    @include normalAnim;
+  }
+
+  &:hover {
+    svg {
+      fill: $green;
+    }
+  }
+}

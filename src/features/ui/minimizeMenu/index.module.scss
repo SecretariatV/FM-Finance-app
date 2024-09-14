@@ -38,11 +38,11 @@
     color: white;
     text-align: left;
     color: $grey-300;
-    @include nomalAnim;
+    @include normalAnim;
   }
 
   svg {
     fill: $grey-300;
-    @include nomalAnim;
+    @include normalAnim;
   }
 }

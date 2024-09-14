@@ -24,7 +24,7 @@ $breakpoints: (
   place-items: center;
 }
 
-@mixin nomalAnim {
+@mixin normalAnim {
   transition: all ease-in-out 0.2s;
 }
 
@@ -55,6 +55,10 @@ $breakpoints: (
 
 @mixin bold {
   font-weight: 700;
+}
+
+@mixin regular {
+  font-weight: 400;
 }
 
 @mixin mainPadding {

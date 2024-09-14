@@ -1,2 +1,30 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
 .root {
+  display: flex;
+  flex-direction: column;
+  gap: $space-400;
+  @include mainPadding;
+
+  &_title {
+    color: $grey-900;
+    @include text1;
+    @include bold;
+  }
+}
+
+.wrapper {
+  background-color: white;
+  border-radius: $space-150;
+  padding: $space-300 $space-250;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  &_header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: $space-300;
+  }
 }

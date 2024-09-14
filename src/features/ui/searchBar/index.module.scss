@@ -1,0 +1,31 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: $space-200;
+  border-radius: $space-100;
+  border: 1px solid $beige-500;
+  padding: $space-150 $space-250;
+  @include normalAnim;
+
+  &:has(input:focus) {
+    border: 1px solid $green;
+
+    svg {
+      fill: $green;
+    }
+  }
+
+  input {
+    cursor: pointer;
+    color: $beige-500;
+    @include text4;
+  }
+
+  svg {
+    fill: $grey-900;
+    @include normalAnim;
+  }
+}
