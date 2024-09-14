@@ -30,7 +30,10 @@ interface ITransactionType {
   name: string;
   date: string;
   amount: number;
+  category: ICategoryType["title"];
 }
+
+type IViewTransactionType = Omit<ITransactionType, "category">;
 
 interface ICategoryType {
   title:
@@ -69,6 +72,8 @@ interface IAppProps {
   searchInfo: string | undefined;
   categoryFilter: string;
   categoryOpen: boolean;
+  sortFilter: string;
+  sortOpen: boolean;
 }
 
 export type {
@@ -80,4 +85,5 @@ export type {
   ITransactionType,
   ICategoryType,
   ISortType,
+  IViewTransactionType,
 };

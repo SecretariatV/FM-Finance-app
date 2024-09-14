@@ -1,10 +1,10 @@
 import { FC } from "react";
 import S from "./index.module.scss";
-import { ITransactionType } from "@utils/typeUtils";
+import { IViewTransactionType } from "@utils/typeUtils";
 import clsx from "clsx";
 
 interface IProps {
-  data: ITransactionType;
+  data: IViewTransactionType;
   index: number;
   total: number;
 }
