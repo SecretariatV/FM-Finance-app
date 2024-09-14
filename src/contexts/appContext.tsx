@@ -18,6 +18,9 @@ const AppContext = createContext<IAppContextType | undefined>(undefined);
 const AppProvider = ({ children }: { children: ReactNode }) => {
   const [app, setApp] = useState<IAppProps>({
     openNavbar: true,
+    searchInfo: undefined,
+    categoryFilter: "all",
+    categoryOpen: false,
   });
 
   return (

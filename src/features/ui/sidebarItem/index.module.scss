@@ -14,14 +14,14 @@
   p {
     display: none;
     z-index: 2;
-    @include nomalAnim;
+    @include normalAnim;
   }
 
   svg {
     fill: $grey-300;
     z-index: 2;
     justify-self: center;
-    @include nomalAnim;
+    @include normalAnim;
   }
 
   &::after {
@@ -34,7 +34,7 @@
     border-radius: 8px 8px 0 0;
     border-bottom: 4px solid $green;
     transform: translateY(100%);
-    @include nomalAnim;
+    @include normalAnim;
   }
 
   &.active {

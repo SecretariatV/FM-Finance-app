@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { INavType, IRouterType } from "./typeUtils";
+import { ICategoryType, INavType, IRouterType } from "./typeUtils";
 import HomePage from "@pages/home";
 import TransactionPage from "@pages/transaction";
 import BudgetPage from "@pages/budget";
@@ -71,4 +71,27 @@ const NAV_DATA: INavType[] = [
   },
 ];
 
-export { ROUTER_DATA, NAV_DATA };
+const categories: ICategoryType[] = [
+  { title: "All Transactions", value: "all" },
+  { title: "Entertainment", value: "entertainment" },
+  { title: "Bills", value: "bills" },
+  { title: "Groceries", value: "groceries" },
+  { title: "Dining Out", value: "dining" },
+  { title: "Transportation", value: "transportation" },
+  { title: "Personal Care", value: "personal" },
+  { title: "Education", value: "education" },
+  { title: "Lifestyle", value: "lifestyle" },
+  { title: "Shopping", value: "shopping" },
+  { title: "General", value: "general" },
+];
+
+const sorts = [
+  { title: "Latest", value: "latest" },
+  { title: "Oldest", value: "oldest" },
+  { title: "A to Z", value: "a-z" },
+  { title: "Z to A", value: "z-a" },
+  { title: "Highest", value: "highest" },
+  { title: "Lowest", value: "lowest" },
+];
+
+export { ROUTER_DATA, NAV_DATA, categories, sorts };

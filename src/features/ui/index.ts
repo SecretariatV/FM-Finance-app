@@ -5,3 +5,6 @@ export * from "./contentCard";
 export * from "./potcardItem";
 export * from "./transactioncardItem";
 export * from "./budgetcardItem";
+export * from "./searchBar";
+export * from "./sortFilter";
+export * from "./categoryFilter";

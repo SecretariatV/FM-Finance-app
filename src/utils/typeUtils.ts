@@ -32,8 +32,43 @@ interface ITransactionType {
   amount: number;
 }
 
+interface ICategoryType {
+  title:
+    | "All Transactions"
+    | "Entertainment"
+    | "Bills"
+    | "Groceries"
+    | "Dining Out"
+    | "Transportation"
+    | "Personal Care"
+    | "Education"
+    | "Lifestyle"
+    | "Shopping"
+    | "General";
+  value:
+    | "all"
+    | "entertainment"
+    | "bills"
+    | "groceries"
+    | "dining"
+    | "transportation"
+    | "personal"
+    | "education"
+    | "lifestyle"
+    | "shopping"
+    | "general";
+}
+
+interface ISortType {
+  title: "Latest" | "Oldest" | "A to Z" | "Z to A" | "Highest" | "Lowest";
+  value: "latest" | "oldest" | "a-z" | "z-a" | "highest" | "lowest";
+}
+
 interface IAppProps {
   openNavbar: boolean;
+  searchInfo: string | undefined;
+  categoryFilter: string;
+  categoryOpen: boolean;
 }
 
 export type {
@@ -43,4 +78,6 @@ export type {
   ISummaryType,
   IContentType,
   ITransactionType,
+  ICategoryType,
+  ISortType,
 };
