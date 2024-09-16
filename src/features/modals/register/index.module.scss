@@ -3,7 +3,9 @@
 
 .root {
   background-color: $beige-100;
-  @include centerItem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
   @include fullScreen;
 
   &_header {
@@ -12,33 +14,31 @@
     border-radius: 0 0 8px 8px;
     padding: $space-300 0;
     background-color: $grey-900;
+    z-index: 30;
     @include centerItem;
   }
 
+  .login,
+  .sign {
+    background-color: white;
+    width: 343px;
+    height: fit-content;
+    border-radius: $space-150;
+    padding: $space-300 $space-250;
+    display: flex;
+    flex-direction: column;
+    gap: $space-400;
+  }
+
   .wrapper {
-    position: relative;
+    width: 100%;
+    height: calc(100dvh - 70px);
+    transform: translateY(0);
+    @include registerAnim;
+    @include centerItem;
 
-    .login {
-      &:has(input[id="change-sign"]:checked) {
-        transform: translateX(-100%);
-      }
-    }
-
-    .sign {
-      position: absolute;
-      top: 0;
-    }
-
-    .login,
-    .sign {
-      background-color: white;
-      width: 343px;
-      height: fit-content;
-      border-radius: $space-150;
-      padding: $space-300 $space-250;
-      display: flex;
-      flex-direction: column;
-      gap: $space-400;
+    &:has(input[id="change-sign"]:checked) {
+      transform: translateY(-100%);
     }
 
     &_header {
@@ -91,6 +91,14 @@
           @include text5;
         }
       }
+
+      &.active {
+        label {
+          color: $green;
+          transform: translateY(-170%);
+          @include text5;
+        }
+      }
     }
 
     &_buttons {
@@ -116,6 +124,7 @@
       cursor: pointer;
       position: absolute;
       inset: 0;
+      opacity: 0;
     }
   }
 }

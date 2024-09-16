@@ -28,6 +28,10 @@ $breakpoints: (
   transition: all ease-in-out 0.2s;
 }
 
+@mixin registerAnim {
+  transition: all ease-in-out 0.7s;
+}
+
 @mixin text1 {
   font-size: 32px;
   line-height: 120%;
