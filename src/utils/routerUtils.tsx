@@ -3,6 +3,7 @@ import { ROUTER_DATA } from "./dataUtils";
 import { IRouterType } from "./typeUtils";
 import { Suspense } from "react";
 import LoadingPage from "@pages/loading";
+import { RegisterModal } from "@features/modals";
 
 const renderRoutes = (routes: IRouterType[]) => {
   return routes.map(({ title, path, element, children = [] }: IRouterType) => {
@@ -18,7 +19,8 @@ const PageRouter = () => {
   const PAGE_ROUTER = renderRoutes(ROUTER_DATA);
   return (
     <Suspense fallback={<LoadingPage effect={false} />}>
-      <Routes>{PAGE_ROUTER}</Routes>
+      <RegisterModal />
+      {/* <Routes>{PAGE_ROUTER}</Routes> */}
     </Suspense>
   );
 };

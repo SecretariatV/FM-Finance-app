@@ -1,0 +1,121 @@
+@use "@styles/mixin" as *;
+@use "@styles/variables" as *;
+
+.root {
+  background-color: $beige-100;
+  @include centerItem;
+  @include fullScreen;
+
+  &_header {
+    width: 100%;
+    height: 70px;
+    border-radius: 0 0 8px 8px;
+    padding: $space-300 0;
+    background-color: $grey-900;
+    @include centerItem;
+  }
+
+  .wrapper {
+    position: relative;
+
+    .login {
+      &:has(input[id="change-sign"]:checked) {
+        transform: translateX(-100%);
+      }
+    }
+
+    .sign {
+      position: absolute;
+      top: 0;
+    }
+
+    .login,
+    .sign {
+      background-color: white;
+      width: 343px;
+      height: fit-content;
+      border-radius: $space-150;
+      padding: $space-300 $space-250;
+      display: flex;
+      flex-direction: column;
+      gap: $space-400;
+    }
+
+    &_header {
+      color: $grey-900;
+      @include text1;
+      @include bold;
+    }
+
+    &_forms {
+      display: flex;
+      flex-direction: column;
+      gap: $space-500;
+    }
+
+    &_form {
+      border-radius: $space-100;
+      padding: $space-150 $space-250;
+      border: 1px solid $beige-500;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: $space-200;
+      @include normalAnim;
+
+      label {
+        position: absolute;
+        @include normalAnim;
+      }
+
+      input {
+        width: 230px;
+      }
+
+      svg {
+        fill: $grey-900;
+        display: none;
+        cursor: pointer;
+
+        &.show {
+          display: block;
+        }
+      }
+
+      &:has(input:focus) {
+        border-color: $green;
+
+        label {
+          color: $green;
+          transform: translateY(-170%);
+          @include text5;
+        }
+      }
+    }
+
+    &_buttons {
+      display: flex;
+      flex-direction: column;
+      gap: $space-200;
+    }
+  }
+}
+
+.note {
+  text-align: center;
+  color: $grey-500;
+  @include text4;
+  @include regular;
+
+  span {
+    color: $grey-900;
+    position: relative;
+    @include bold;
+
+    input {
+      cursor: pointer;
+      position: absolute;
+      inset: 0;
+    }
+  }
+}
